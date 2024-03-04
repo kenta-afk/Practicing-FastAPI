@@ -3,10 +3,12 @@ from typing import Optional
 
 app = FastAPI()
 
+#http method
 @app.get("/")
 async def index():
     return {"message": "Hello World"}
 
+#path param & query param
 @app.get("/countries/{country_name}")
 async def country(country_name: str = "japan", city_name: str = "tokyo"):
     return {
